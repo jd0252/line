@@ -10,7 +10,7 @@ e=datetime.datetime.today()
 print(e,'This message is running')
 
 sched = BlockingScheduler()
-@sched.scheduled_job('cron', day_of_week='mon-fri', hour=2)
+@sched.scheduled_job('cron', day_of_week='mon-fri', hour=18)
 sched.start()
 
 def scheduled_job():
