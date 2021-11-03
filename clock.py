@@ -5,8 +5,9 @@ import pandas_datareader as web
 import datetime
 e=datetime.datetime.today()
 print(e,'This message is running')
-sched = BlockingScheduler()
 
+sched = BlockingScheduler()
+scheduler = AsyncIOScheduler(timezone="Asia/Taipei")
 @sched.scheduled_job('cron', day_of_week='mon-fri', hour=2)
 def scheduled_job():
 
