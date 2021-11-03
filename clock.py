@@ -84,6 +84,7 @@ def scheduled_job():
 scheduler = AsyncIOScheduler(timezone="Asia/Taipei")
 scheduler.add_job(scheduled_job,'cron', day_of_week='mon-fri', hour='*/2')
 scheduler.start()
+print("done")
 #@sched.scheduled_job('cron', day_of_week='mon-fri', hour=2)
 
 #sched.start()
