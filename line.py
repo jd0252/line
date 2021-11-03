@@ -9,17 +9,6 @@ import requests
 import twstock
 import pandas_datareader as web
 import datetime
-from apscheduler.schedulers.blocking import BlockingScheduler
-
-sched = BlockingScheduler()
-
-@sched.scheduled_job('cron', day_of_week='mon-fri', hour=14)
-def scheduled_job():
-    print('This job is run every weekday at 5pm.')
-
-sched.start()
-
-
 
 e = datetime.datetime.today()
 # 下載最新收盤價價

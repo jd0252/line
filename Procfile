@@ -1,1 +1,1 @@
-web: python line.py 
+web: python clock.py
