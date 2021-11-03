@@ -74,7 +74,7 @@ message+=f'\n-----------總結----------- \n當日大盤{close:.2f}\n 10/4大盤
 
 # 課程的token
 # 由：https://notify-bot.line.me/my/ 取得
-#0x9AUj9ueQDuJGXEO62djREkZO5AJ7BofSlRyYQByBz 
+#0x9AUj9ueQDuJGXEO62djREkZO5AJ7BofSlRyYQByBz
 token ='FoOOUvlvFlvcl2kB3fsXWZe6UvriZSSpongEVDhPUNZ'  # 私募
 #token = 'iZXZdsLKNDygqSfJ2gZtaZgVnHeSZ2fuzh7DX8PKAct'
 
