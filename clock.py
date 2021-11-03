@@ -9,6 +9,9 @@ import asyncio
 e=datetime.datetime.today()
 print(e,'This message is running')
 
+sched = BlockingScheduler()
+@sched.scheduled_job('cron', day_of_week='mon-fri', hour=2)
+sched.start()
 
 def scheduled_job():
 
@@ -86,7 +89,3 @@ def scheduled_job():
 # scheduler.add_job(scheduled_job,'cron', day_of_week='mon-fri', hour='*/2')
 # scheduler.start()
 # print("done")
-
-sched = BlockingScheduler()
-@sched.scheduled_job('cron', day_of_week='mon-fri', hour=18)
-sched.start()
