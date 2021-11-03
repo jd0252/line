@@ -88,5 +88,5 @@ def scheduled_job():
 # print("done")
 
 sched = BlockingScheduler()
-@sched.scheduled_job('cron', day_of_week='mon-fri', hour=2)
+@sched.scheduled_job('cron', day_of_week='mon-fri', hour=18)
 sched.start()
