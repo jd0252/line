@@ -3,6 +3,8 @@ import requests
 import twstock
 import pandas_datareader as web
 import datetime
+import asyncio
+
 e=datetime.datetime.today()
 print(e,'This message is running')
 
@@ -78,9 +80,9 @@ def scheduled_job():
     r = requests.post(url ,headers = headers ,params=payload)
     r
 
-sched = BlockingScheduler()
+
 scheduler = AsyncIOScheduler(timezone="Asia/Taipei")
-sched.add_job(scheduled_job,'cron', day_of_week='mon-fri', hour=2)
+scheduler.add_job(scheduled_job,'cron', day_of_week='mon-fri', hour=2)
 #@sched.scheduled_job('cron', day_of_week='mon-fri', hour=2)
 
 sched.start()
