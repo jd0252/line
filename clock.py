@@ -1,6 +1,6 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
 import datetime
-import line.py
+import os  os.system("line.py")
 
 sched = BlockingScheduler()
 
