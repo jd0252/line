@@ -6,9 +6,7 @@ import datetime
 e=datetime.datetime.today()
 print(e,'This message is running')
 
-sched = BlockingScheduler()
-scheduler = AsyncIOScheduler(timezone="Asia/Taipei")
-@sched.scheduled_job('cron', day_of_week='mon-fri', hour=2)
+
 def scheduled_job():
 
     print(e,'This message had send')
@@ -80,6 +78,9 @@ def scheduled_job():
     r = requests.post(url ,headers = headers ,params=payload)
     r
 
-
+sched = BlockingScheduler()
+scheduler = AsyncIOScheduler(timezone="Asia/Taipei")
+sched.add_job(scheduled_job,'cron', day_of_week='mon-fri', hour=2)
+#@sched.scheduled_job('cron', day_of_week='mon-fri', hour=2)
 
 sched.start()
