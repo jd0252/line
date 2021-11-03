@@ -9,8 +9,20 @@ import requests
 import twstock
 import pandas_datareader as web
 import datetime
+from apscheduler.schedulers.blocking import BlockingScheduler
+
+sched = BlockingScheduler()
+
+@sched.scheduled_job('cron', day_of_week='mon-fri', hour=14)
+def scheduled_job():
+    print('This job is run every weekday at 5pm.')
+
+sched.start()
+
+
+
 e = datetime.datetime.today()
-# 下載醉心收盤價價
+# 下載最新收盤價價
 close = web.DataReader(name='^TWII', data_source='yahoo',start='2021-01-01')['Close'][-1]
 original=16408.35
 market_ret=(close-original)/original
@@ -63,7 +75,7 @@ message+=f'\n-----------總結----------- \n當日大盤{close:.2f}\n 10/4大盤
 # 課程的token
 # 由：https://notify-bot.line.me/my/ 取得
 #0x9AUj9ueQDuJGXEO62djREkZO5AJ7BofSlRyYQByBz 
-token ='BtBGtRC9DhF9riBGPfD5ODTl5J3C4A8dFPOMCEQzDcm'  # 私募
+token ='FoOOUvlvFlvcl2kB3fsXWZe6UvriZSSpongEVDhPUNZ'  # 私募
 #token = 'iZXZdsLKNDygqSfJ2gZtaZgVnHeSZ2fuzh7DX8PKAct'
 
 url = "https://notify-api.line.me/api/notify"  # --> 不支援http, 只能用https
