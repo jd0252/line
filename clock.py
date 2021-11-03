@@ -1,4 +1,4 @@
-from apscheduler.schedulers.blocking import BlockingScheduler
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
 import requests
 import twstock
 import pandas_datareader as web
