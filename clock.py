@@ -11,7 +11,7 @@ print(e,'This message is running')
 
 sched = BlockingScheduler()
 @sched.scheduled_job('cron', day_of_week='mon-fri', hour=2)
-#sched.start()
+sched.start()
 
 def scheduled_job():
 
