@@ -73,7 +73,7 @@ def scheduled_job():
     # 課程的token
     # 由：https://notify-bot.line.me/my/ 取得
     #0x9AUj9ueQDuJGXEO62djREkZO5AJ7BofSlRyYQByBz
-    token ='FoOOUvlvFlvcl2kB3fsXWZe6UvriZSSpongEVDhPUNZ'  # 私募
+    token ='1jq8hnY7y8lVkrabfkjMU0MeXoMPuTtBtEWsh3gT2eV'  # 私募
     #token = 'iZXZdsLKNDygqSfJ2gZtaZgVnHeSZ2fuzh7DX8PKAct'
 
     url = "https://notify-api.line.me/api/notify"  # --> 不支援http, 只能用https
