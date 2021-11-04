@@ -9,9 +9,6 @@ import asyncio
 e=datetime.datetime.today()
 print(e,'This message is running')
 
-sched = BlockingScheduler()
-@sched.scheduled_job('cron', day_of_week='mon-fri', hour=18)
-sched.start()
 
 def scheduled_job():
 
@@ -73,7 +70,7 @@ def scheduled_job():
     # 課程的token
     # 由：https://notify-bot.line.me/my/ 取得
     #0x9AUj9ueQDuJGXEO62djREkZO5AJ7BofSlRyYQByBz
-    token ='FoOOUvlvFlvcl2kB3fsXWZe6UvriZSSpongEVDhPUNZ'  # 私募
+    token ='1jq8hnY7y8lVkrabfkjMU0MeXoMPuTtBtEWsh3gT2eV'  # 私募
     #token = 'iZXZdsLKNDygqSfJ2gZtaZgVnHeSZ2fuzh7DX8PKAct'
 
     url = "https://notify-api.line.me/api/notify"  # --> 不支援http, 只能用https
@@ -84,6 +81,11 @@ def scheduled_job():
     r = requests.post(url ,headers = headers ,params=payload)
     r
 
+sched = BlockingScheduler()
+
+sched.add_job(scheduled_job, 'interval', minutes=5)
+
+sched.start()
 
 # scheduler = AsyncIOScheduler(timezone="Asia/Taipei")
 # scheduler.add_job(scheduled_job,'cron', day_of_week='mon-fri', hour='*/2')
